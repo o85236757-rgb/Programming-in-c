@@ -27,7 +27,9 @@ int main()
 
     for(x=0; x<rows; x++)
     {
+        printf("Pritn of the names:"); 
         printf("\n%s\n", Names[x]); 
+         printf("End of the print of the names"); 
     }
 
     return 0; 
