@@ -40,8 +40,7 @@ int main()
     }
 
 
-// Here is gonna be a few messages to test 
-// the conflict 
+
     return 0; 
 
     
