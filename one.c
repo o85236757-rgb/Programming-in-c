@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #define columns 30
+#define T 3
 int main()
 {
     char Names[5][columns], temp[columns];
-    int x, y, rows; 
+    int x, y, rows, ages[T]; 
     rows = sizeof(Names)/sizeof(Names[0]);
 
     for(x=0; x<rows; x++)
@@ -31,6 +32,14 @@ int main()
         printf("\n%s\n", Names[x]); 
          printf("End of the print of the names"); 
     }
+
+    printf("Enter an age"); 
+    for(x=0; x<rows; x++)
+    {
+        fgets(Names[x], T, stdin);
+    }
+
+
 
     return 0; 
 
