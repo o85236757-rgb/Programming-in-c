@@ -4,7 +4,7 @@
 #define T 3
 int main()
 {
-    char Names[5][columns], temp[columns];
+    char Names[3][columns], temp[columns];
     int x, y, rows, ages[T]; 
     rows = sizeof(Names)/sizeof(Names[0]);
 
@@ -25,19 +25,24 @@ int main()
             }
         }
     }
-
+    printf("\nPritn of the names: \n");
     for(x=0; x<rows; x++)
     {
-        printf("Pritn of the names:"); 
-        printf("\n%s\n", Names[x]); 
-         printf("End of the print of the names"); 
+        puts(Names[x]);
+    }
+     printf("End of the print of the names"); 
+
+    printf("\nEnter an age: \n"); 
+    for(x=0; x<T; x++)
+    {
+        scanf("%d", &ages[x]);
+    }
+    
+    for(x=0; x<T; x++)
+    {
+       printf("%d\n", ages[x]);
     }
 
-    printf("Enter an age"); 
-    for(x=0; x<rows; x++)
-    {
-        fgets(Names[x], T, stdin);
-    }
 
 
 
