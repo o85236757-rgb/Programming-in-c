@@ -17,10 +17,10 @@ int main()
     output(days,hours,minutes,seconds);
 }
 int input()
-{
-    int days; 
+{ 
+    int days;
     printf("Enter how many days do you want to transform: \n");
-    scanf("%d", days);
+    scanf("%d", &days);
     return days; 
 }
 int toHours(int days)
@@ -37,5 +37,5 @@ int toSeconds(int minutes)
 }
 void output(int days,int hours,int minutes,int seconds)
 {
-    printf("The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n");
+    printf("The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n", days,hours,minutes,seconds);
 }
