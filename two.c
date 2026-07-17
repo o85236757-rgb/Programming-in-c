@@ -2,19 +2,19 @@
 #define Hours 24
 #define MinSeg 60
 void input(int *);
-void toHours(int, int *);
-void toMinutes(int,int *);
-int toSeconds(int); 
-void output(int, int,int, int); 
+void toHours(int *, int *);
+void toMinutes(int *,int *);
+void toSeconds(int *, int* ); 
+void output(int *, int *,int *, int *); 
 
 int main()
 {
     int days, hours, minutes, seconds; 
     input(&days);
-    toHours(days, &hours);
-    toMinutes(hours, &minutes);
-    seconds=toSeconds(minutes);
-    output(days,hours,minutes,seconds);
+    toHours(&days, &hours);
+    toMinutes(&hours, &minutes);
+    toSeconds(&minutes, &seconds);
+    output(&days,&hours,&minutes,&seconds);
 }
 void input(int *pDays)
 { 
@@ -31,19 +31,19 @@ void input(int *pDays)
     
     
 }
-void toHours(int days , int *pHours)
+void toHours(int *days , int *pHours)
 {
-    *pHours=days*Hours;
+    *pHours=*days*Hours;
 }
-void toMinutes(int hours, int *pMinutes)
+void toMinutes(int *hours, int *pMinutes)
 {
-    *pMinutes =hours*MinSeg;
+    *pMinutes =*hours*MinSeg;
 }
-int toSeconds(int minutes)
+void toSeconds(int *minutes, int *pSeconds)
 {
-    return minutes*MinSeg;
+   *pSeconds=*minutes*MinSeg;
 }
-void output(int days,int hours,int minutes,int seconds)
+void output(int *days,int *hours,int *minutes,int *seconds)
 {
-    printf(" The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n", days,hours,minutes,seconds);
+    printf(" The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n", *days,*hours,*minutes,*seconds);
 }
