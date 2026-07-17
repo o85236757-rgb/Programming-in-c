@@ -20,7 +20,15 @@ int input()
 { 
     int days;
     printf("Enter how many days do you want to transform: \n");
+    do
+    {
     scanf("%d", &days);
+    if(days<0)
+    {
+        printf("Enter a valid number of days: \n");
+    }
+    } while (days<0);
+    
     return days; 
 }
 int toHours(int days)
@@ -37,5 +45,5 @@ int toSeconds(int minutes)
 }
 void output(int days,int hours,int minutes,int seconds)
 {
-    printf("The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n", days,hours,minutes,seconds);
+    printf(" The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n", days,hours,minutes,seconds);
 }
