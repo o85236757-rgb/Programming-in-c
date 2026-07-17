@@ -2,8 +2,8 @@
 #define Hours 24
 #define MinSeg 60
 void input(int *);
-int toHours(int, int *);
-int toMinutes(int);
+void toHours(int, int *);
+void toMinutes(int,int *);
 int toSeconds(int); 
 void output(int, int,int, int); 
 
@@ -12,7 +12,7 @@ int main()
     int days, hours, minutes, seconds; 
     input(&days);
     toHours(days, &hours);
-    minutes=toMinutes(hours);
+    toMinutes(hours, &minutes);
     seconds=toSeconds(minutes);
     output(days,hours,minutes,seconds);
 }
@@ -31,13 +31,13 @@ void input(int *pDays)
     
     
 }
-int toHours(int days , int *pHours)
+void toHours(int days , int *pHours)
 {
-    
+    *pHours=days*Hours;
 }
-int toMinutes(int hours)
+void toMinutes(int hours, int *pMinutes)
 {
-    return hours*MinSeg;
+    *pMinutes =hours*MinSeg;
 }
 int toSeconds(int minutes)
 {
