@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define Hours 24
+#define Hours 25
 #define MinSeg 60
 void input(int *);
 void toHours(int *, int *);
