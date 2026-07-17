@@ -1,8 +1,8 @@
 #include <stdio.h>
 #define Hours 24
 #define MinSeg 60
-int input(void);
-int toHours(int);
+void input(int *);
+int toHours(int, int *);
 int toMinutes(int);
 int toSeconds(int); 
 void output(int, int,int, int); 
@@ -10,30 +10,30 @@ void output(int, int,int, int);
 int main()
 {
     int days, hours, minutes, seconds; 
-    days=input();
-    hours=toHours(days);
+    input(&days);
+    toHours(days, &hours);
     minutes=toMinutes(hours);
     seconds=toSeconds(minutes);
     output(days,hours,minutes,seconds);
 }
-int input()
+void input(int *pDays)
 { 
-    int days;
+    
     printf("Enter how many days do you want to transform: \n");
     do
     {
-    scanf("%d", &days);
-    if(days<0)
+    scanf("%d",pDays);
+    if(*pDays<0)
     {
         printf("Enter a valid number of days: \n");
     }
-    } while (days<0);
+    } while (*pDays<0);
     
-    return days; 
+    
 }
-int toHours(int days)
+int toHours(int days , int *pHours)
 {
-    return days*Hours;
+    
 }
 int toMinutes(int hours)
 {
