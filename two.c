@@ -1,49 +1,49 @@
 #include <stdio.h>
 #define Hours 24
 #define MinSeg 60
-int input(void);
-int toHours(int);
-int toMinutes(int);
-int toSeconds(int); 
-void output(int, int,int, int); 
+void input(int *);
+void toHours(int *, int *);
+void toMinutes(int *,int *);
+void toSeconds(int *, int* ); 
+void output(int *, int *,int *, int *); 
 
 int main()
 {
     int days, hours, minutes, seconds; 
-    days=input();
-    hours=toHours(days);
-    minutes=toMinutes(hours);
-    seconds=toSeconds(minutes);
-    output(days,hours,minutes,seconds);
+    input(&days);
+    toHours(&days, &hours);
+    toMinutes(&hours, &minutes);
+    toSeconds(&minutes, &seconds);
+    output(&days,&hours,&minutes,&seconds);
 }
-int input()
+void input(int *pDays)
 { 
-    int days;
+    
     printf("Enter how many days do you want to transform: \n");
     do
     {
-    scanf("%d", &days);
-    if(days<0)
+    scanf("%d",pDays);
+    if(*pDays<0)
     {
         printf("Enter a valid number of days: \n");
     }
-    } while (days<0);
+    } while (*pDays<0);
     
-    return days; 
+    
 }
-int toHours(int days)
+void toHours(int *days , int *pHours)
 {
-    return days*Hours;
+    *pHours=*days*Hours;
 }
-int toMinutes(int hours)
+void toMinutes(int *hours, int *pMinutes)
 {
-    return hours*MinSeg;
+    *pMinutes =*hours*MinSeg;
 }
-int toSeconds(int minutes)
+void toSeconds(int *minutes, int *pSeconds)
 {
-    return minutes*MinSeg;
+   *pSeconds=*minutes*MinSeg;
 }
-void output(int days,int hours,int minutes,int seconds)
+void output(int *days,int *hours,int *minutes,int *seconds)
 {
-    printf(" The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n", days,hours,minutes,seconds);
+    printf(" The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n", *days,*hours,*minutes,*seconds);
 }
