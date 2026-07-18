@@ -47,5 +47,4 @@ void output(int *days,int *hours,int *minutes,int *seconds)
 {
     printf(" The days are: %d\n The hours are: %d\n The minutes are: %d\n The seconds are: %d\n", *days,*hours,*minutes,*seconds);
 }
-// A few comments here 
-// Another comments here 
+ 
